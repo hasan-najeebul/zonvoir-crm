@@ -1,0 +1,877 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+<meta charset="utf-8">
+<title>Zonvoir CRM</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fafafa">
+<link rel="manifest" href="site.webmanifest">
+<link rel="apple-touch-icon" href="icon.png">
+
+<!---select2--> 
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<!---Bootstrap Css--> 
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!---Tailwind Css--> 
+<script src="css/tailwind.css"></script>
+<!---Font awesome Css--> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<!---Data Table--> 
+<link rel="stylesheet" href="css/jquery.dataTables.min.css" />
+<!---Poppins Font Family--> 
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,800&display=swap" rel="stylesheet">
+<!---Main Css--> 
+<link rel="stylesheet" href="css/main.css">  
+</head>  
+
+<body>
+
+<header class="main-header fixed-top bg-white">
+    <nav class="navbar top-navbar justify-content-between align-items-center navbar-expand-md navbar-light">
+        
+         <div class="d-flex w-50 align-items-center">
+             <div class="me-3">
+                 <i class="fa-solid fa-xmark fs-4"></i>
+                 <i class="fa-solid fa-bars d-none"></i>
+             </div>
+             <div class="header-search-area input-group">
+                 <input type="text" class="form-control" id="exampleInputAmount" placeholder="Search">
+                 <span class="input-group-btn">
+                     <button type="button" class="btn btn-secondary"><i class="fa-solid fa-magnifying-glass"></i></button>
+                 </span>
+             </div>
+             
+         </div>
+        
+         <div class="header-right-area">
+              <div class="d-flex align-items-center justify-content-end gap-3">
+                    
+                     <div class="select-language d-flex align-items-center">
+                       <div class="globe-icon">
+                           <i class="fa-solid fa-globe"></i>
+                       </div>
+                        <select class="form-control" id="countries" style="width: 190px; height: 400px">
+                          <option value="AF" data-capital="Kabul">Language</option>
+                          <option value="AF" data-capital="Kabul">Afghanistan</option>
+                          <option value="AX" data-capital="Mariehamn">Aland Islands</option>
+                          <option value="AL" data-capital="Tirana">Albania</option>
+                          <option value="DZ" data-capital="Algiers">Algeria</option>
+                          <option value="AS" data-capital="Pago Pago">American Samoa</option>
+                          <option value="AD" data-capital="Andorra la Vella">Andorra</option>
+                          <option value="AO" data-capital="Luanda">Angola</option>
+                          <option value="AI" data-capital="The Valley">Anguilla</option>
+                          <option value="AG" data-capital="St. John's">Antigua and Barbuda</option>
+                          <option value="AR" data-capital="Buenos Aires">Argentina</option>
+                          <option value="AM" data-capital="Yerevan">Armenia</option>
+                          <option value="AW" data-capital="Oranjestad">Aruba</option>
+                          <option value="AU" data-capital="Canberra">Australia</option>
+                          <option value="AT" data-capital="Vienna">Austria</option>
+                          <option value="AZ" data-capital="Baku">Azerbaijan</option>
+                          <option value="BS" data-capital="Nassau">Bahamas</option>
+                          <option value="BH" data-capital="Manama">Bahrain</option>
+                          <option value="BD" data-capital="Dhaka">Bangladesh</option>
+                          <option value="BB" data-capital="Bridgetown">Barbados</option>
+                          <option value="BY" data-capital="Minsk">Belarus</option>
+                          <option value="BE" data-capital="Brussels">Belgium</option>
+                          <option value="BZ" data-capital="Belmopan">Belize</option>
+                          <option value="BJ" data-capital="Porto-Novo">Benin</option>
+                          <option value="BM" data-capital="Hamilton">Bermuda</option>
+                          <option value="BT" data-capital="Thimphu">Bhutan</option>
+                          <option value="BO" data-capital="Sucre">Bolivia</option>
+                          <option value="BA" data-capital="Sarajevo">Bosnia and Herzegovina</option>
+                          <option value="BW" data-capital="Gaborone">Botswana</option>
+                          <option value="BR" data-capital="Brasília">Brazil</option>
+                          <option value="IO" data-capital="Diego Garcia">British Indian Ocean Territory</option>
+                          <option value="BN" data-capital="Bandar Seri Begawan">Brunei Darussalam</option>
+                          <option value="BG" data-capital="Sofia">Bulgaria</option>
+                          <option value="BF" data-capital="Ouagadougou">Burkina Faso</option>
+                          <option value="BI" data-capital="Bujumbura">Burundi</option>
+                          <option value="CV" data-capital="Praia">Cabo Verde</option>
+                          <option value="KH" data-capital="Phnom Penh">Cambodia</option>
+                          <option value="CM" data-capital="Yaoundé">Cameroon</option>
+                          <option value="CA" data-capital="Ottawa">Canada</option>
+                          <option value="KY" data-capital="George Town">Cayman Islands</option>
+                          <option value="CF" data-capital="Bangui">Central African Republic</option>
+                          <option value="TD" data-capital="N'Djamena">Chad</option>
+                          <option value="CL" data-capital="Santiago">Chile</option>
+                          <option value="CN" data-capital="Beijing">China</option>
+                          <option value="CX" data-capital="Flying Fish Cove">Christmas Island</option>
+                          <option value="CC" data-capital="West Island">Cocos (Keeling) Islands</option>
+                          <option value="CO" data-capital="Bogotá">Colombia</option>
+                          <option value="KM" data-capital="Moroni">Comoros</option>
+                          <option value="CK" data-capital="Avarua">Cook Islands</option>
+                          <option value="CR" data-capital="San José">Costa Rica</option>
+                          <option value="HR" data-capital="Zagreb">Croatia</option>
+                          <option value="CU" data-capital="Havana">Cuba</option>
+                          <option value="CW" data-capital="Willemstad">Curaçao</option>
+                          <option value="CY" data-capital="Nicosia">Cyprus</option>
+                          <option value="CZ" data-capital="Prague">Czech Republic</option>
+                          <option value="CI" data-capital="Yamoussoukro">Côte d'Ivoire</option>
+                          <option value="CD" data-capital="Kinshasa">Democratic Republic of the Congo</option>
+                          <option value="DK" data-capital="Copenhagen">Denmark</option>
+                          <option value="DJ" data-capital="Djibouti">Djibouti</option>
+                          <option value="DM" data-capital="Roseau">Dominica</option>
+                          <option value="DO" data-capital="Santo Domingo">Dominican Republic</option>
+                          <option value="EC" data-capital="Quito">Ecuador</option>
+                          <option value="EG" data-capital="Cairo">Egypt</option>
+                          <option value="SV" data-capital="San Salvador">El Salvador</option>
+                          <option value="GQ" data-capital="Malabo">Equatorial Guinea</option>
+                          <option value="ER" data-capital="Asmara">Eritrea</option>
+                          <option value="EE" data-capital="Tallinn">Estonia</option>
+                          <option value="ET" data-capital="Addis Ababa">Ethiopia</option>
+                          <option value="FK" data-capital="Stanley">Falkland Islands</option>
+                          <option value="FO" data-capital="Tórshavn">Faroe Islands</option>
+                          <option value="FM" data-capital="Palikir">Federated States of Micronesia</option>
+                          <option value="FJ" data-capital="Suva">Fiji</option>
+                          <option value="FI" data-capital="Helsinki">Finland</option>
+                          <option value="MK" data-capital="Skopje">Former Yugoslav Republic of Macedonia</option>
+                          <option value="FR" data-capital="Paris">France</option>
+                          <option value="PF" data-capital="Papeete">French Polynesia</option>
+                          <option value="GA" data-capital="Libreville">Gabon</option>
+                          <option value="GM" data-capital="Banjul">Gambia</option>
+                          <option value="GE" data-capital="Tbilisi">Georgia</option>
+                          <option value="DE" data-capital="Berlin">Germany</option>
+                          <option value="GH" data-capital="Accra">Ghana</option>
+                          <option value="GI" data-capital="Gibraltar">Gibraltar</option>
+                          <option value="GR" data-capital="Athens">Greece</option>
+                          <option value="GL" data-capital="Nuuk">Greenland</option>
+                          <option value="GD" data-capital="St. George's">Grenada</option>
+                          <option value="GU" data-capital="Hagåtña">Guam</option>
+                          <option value="GT" data-capital="Guatemala City">Guatemala</option>
+                          <option value="GG" data-capital="Saint Peter Port">Guernsey</option>
+                          <option value="GN" data-capital="Conakry">Guinea</option>
+                          <option value="GW" data-capital="Bissau">Guinea-Bissau</option>
+                          <option value="GY" data-capital="Georgetown">Guyana</option>
+                          <option value="HT" data-capital="Port-au-Prince">Haiti</option>
+                          <option value="VA" data-capital="Vatican City">Holy See</option>
+                          <option value="HN" data-capital="Tegucigalpa">Honduras</option>
+                          <option value="HK" data-capital="Hong Kong">Hong Kong</option>
+                          <option value="HU" data-capital="Budapest">Hungary</option>
+                          <option value="IS" data-capital="Reykjavik">Iceland</option>
+                          <option value="IN" data-capital="New Delhi">India</option>
+                          <option value="ID" data-capital="Jakarta">Indonesia</option>
+                          <option value="IR" data-capital="Tehran">Iran</option>
+                          <option value="IQ" data-capital="Baghdad">Iraq</option>
+                          <option value="IE" data-capital="Dublin">Ireland</option>
+                          <option value="IM" data-capital="Douglas">Isle of Man</option>
+                          <option value="IL" data-capital="Jerusalem">Israel</option>
+                          <option value="IT" data-capital="Rome">Italy</option>
+                          <option value="JM" data-capital="Kingston">Jamaica</option>
+                          <option value="JP" data-capital="Tokyo">Japan</option>
+                          <option value="JE" data-capital="Saint Helier">Jersey</option>
+                          <option value="JO" data-capital="Amman">Jordan</option>
+                          <option value="KZ" data-capital="Astana">Kazakhstan</option>
+                          <option value="KE" data-capital="Nairobi">Kenya</option>
+                          <option value="KI" data-capital="South Tarawa">Kiribati</option>
+                          <option value="KW" data-capital="Kuwait City">Kuwait</option>
+                          <option value="KG" data-capital="Bishkek">Kyrgyzstan</option>
+                          <option value="LA" data-capital="Vientiane">Laos</option>
+                          <option value="LV" data-capital="Riga">Latvia</option>
+                          <option value="LB" data-capital="Beirut">Lebanon</option>
+                          <option value="LS" data-capital="Maseru">Lesotho</option>
+                          <option value="LR" data-capital="Monrovia">Liberia</option>
+                          <option value="LY" data-capital="Tripoli">Libya</option>
+                          <option value="LI" data-capital="Vaduz">Liechtenstein</option>
+                          <option value="LT" data-capital="Vilnius">Lithuania</option>
+                          <option value="LU" data-capital="Luxembourg City">Luxembourg</option>
+                          <option value="MO" data-capital="Macau">Macau</option>
+                          <option value="MG" data-capital="Antananarivo">Madagascar</option>
+                          <option value="MW" data-capital="Lilongwe">Malawi</option>
+                          <option value="MY" data-capital="Kuala Lumpur">Malaysia</option>
+                          <option value="MV" data-capital="Malé">Maldives</option>
+                          <option value="ML" data-capital="Bamako">Mali</option>
+                          <option value="MT" data-capital="Valletta">Malta</option>
+                          <option value="MH" data-capital="Majuro">Marshall Islands</option>
+                          <option value="MQ" data-capital="Fort-de-France">Martinique</option>
+                          <option value="MR" data-capital="Nouakchott">Mauritania</option>
+                          <option value="MU" data-capital="Port Louis">Mauritius</option>
+                          <option value="MX" data-capital="Mexico City">Mexico</option>
+                          <option value="MD" data-capital="Chișinău">Moldova</option>
+                          <option value="MC" data-capital="Monaco">Monaco</option>
+                          <option value="MN" data-capital="Ulaanbaatar">Mongolia</option>
+                          <option value="ME" data-capital="Podgorica">Montenegro</option>
+                          <option value="MS" data-capital="Little Bay, Brades, Plymouth">Montserrat</option>
+                          <option value="MA" data-capital="Rabat">Morocco</option>
+                          <option value="MZ" data-capital="Maputo">Mozambique</option>
+                          <option value="MM" data-capital="Naypyidaw">Myanmar</option>
+                          <option value="NA" data-capital="Windhoek">Namibia</option>
+                          <option value="NR" data-capital="Yaren District">Nauru</option>
+                          <option value="NP" data-capital="Kathmandu">Nepal</option>
+                          <option value="NL" data-capital="Amsterdam">Netherlands</option>
+                          <option value="NZ" data-capital="Wellington">New Zealand</option>
+                          <option value="NI" data-capital="Managua">Nicaragua</option>
+                          <option value="NE" data-capital="Niamey">Niger</option>
+                          <option value="NG" data-capital="Abuja">Nigeria</option>
+                          <option value="NU" data-capital="Alofi">Niue</option>
+                          <option value="NF" data-capital="Kingston">Norfolk Island</option>
+                          <option value="KP" data-capital="Pyongyang">North Korea</option>
+                          <option value="MP" data-capital="Capitol Hill">Northern Mariana Islands</option>
+                          <option value="NO" data-capital="Oslo">Norway</option>
+                          <option value="OM" data-capital="Muscat">Oman</option>
+                          <option value="PK" data-capital="Islamabad">Pakistan</option>
+                          <option value="PW" data-capital="Ngerulmud">Palau</option>
+                          <option value="PA" data-capital="Panama City">Panama</option>
+                          <option value="PG" data-capital="Port Moresby">Papua New Guinea</option>
+                          <option value="PY" data-capital="Asunción">Paraguay</option>
+                          <option value="PE" data-capital="Lima">Peru</option>
+                          <option value="PH" data-capital="Manila">Philippines</option>
+                          <option value="PN" data-capital="Adamstown">Pitcairn</option>
+                          <option value="PL" data-capital="Warsaw">Poland</option>
+                          <option value="PT" data-capital="Lisbon">Portugal</option>
+                          <option value="PR" data-capital="San Juan">Puerto Rico</option>
+                          <option value="QA" data-capital="Doha">Qatar</option>
+                          <option value="CG" data-capital="Brazzaville">Republic of the Congo</option>
+                          <option value="RO" data-capital="Bucharest">Romania</option>
+                          <option value="RU" data-capital="Moscow">Russia</option>
+                          <option value="RW" data-capital="Kigali">Rwanda</option>
+                          <option value="BL" data-capital="Gustavia">Saint Barthélemy</option>
+                          <option value="KN" data-capital="Basseterre">Saint Kitts and Nevis</option>
+                          <option value="LC" data-capital="Castries">Saint Lucia</option>
+                          <option value="VC" data-capital="Kingstown">Saint Vincent and the Grenadines</option>
+                          <option value="WS" data-capital="Apia">Samoa</option>
+                          <option value="SM" data-capital="San Marino">San Marino</option>
+                          <option value="ST" data-capital="São Tomé">Sao Tome and Principe</option>
+                          <option value="SA" data-capital="Riyadh">Saudi Arabia</option>
+                          <option value="SN" data-capital="Dakar">Senegal</option>
+                          <option value="RS" data-capital="Belgrade">Serbia</option>
+                          <option value="SC" data-capital="Victoria">Seychelles</option>
+                          <option value="SL" data-capital="Freetown">Sierra Leone</option>
+                          <option value="SG" data-capital="Singapore">Singapore</option>
+                          <option value="SX" data-capital="Philipsburg">Sint Maarten</option>
+                          <option value="SK" data-capital="Bratislava">Slovakia</option>
+                          <option value="SI" data-capital="Ljubljana">Slovenia</option>
+                          <option value="SB" data-capital="Honiara">Solomon Islands</option>
+                          <option value="SO" data-capital="Mogadishu">Somalia</option>
+                          <option value="ZA" data-capital="Pretoria">South Africa</option>
+                          <option value="KR" data-capital="Seoul">South Korea</option>
+                          <option value="SS" data-capital="Juba">South Sudan</option>
+                          <option value="ES" data-capital="Madrid">Spain</option>
+                          <option value="LK" data-capital="Sri Jayawardenepura Kotte, Colombo">Sri Lanka</option>
+                          <option value="PS" data-capital="Ramallah">State of Palestine</option>
+                          <option value="SD" data-capital="Khartoum">Sudan</option>
+                          <option value="SR" data-capital="Paramaribo">Suriname</option>
+                          <option value="SZ" data-capital="Lobamba, Mbabane">Swaziland</option>
+                          <option value="SE" data-capital="Stockholm">Sweden</option>
+                          <option value="CH" data-capital="Bern">Switzerland</option>
+                          <option value="SY" data-capital="Damascus">Syrian Arab Republic</option>
+                          <option value="TW" data-capital="Taipei">Taiwan</option>
+                          <option value="TJ" data-capital="Dushanbe">Tajikistan</option>
+                          <option value="TZ" data-capital="Dodoma">Tanzania</option>
+                          <option value="TH" data-capital="Bangkok">Thailand</option>
+                          <option value="TL" data-capital="Dili">Timor-Leste</option>
+                          <option value="TG" data-capital="Lomé">Togo</option>
+                          <option value="TK" data-capital="Nukunonu, Atafu,Tokelau">Tokelau</option>
+                          <option value="TO" data-capital="Nukuʻalofa">Tonga</option>
+                          <option value="TT" data-capital="Port of Spain">Trinidad and Tobago</option>
+                          <option value="TN" data-capital="Tunis">Tunisia</option>
+                          <option value="TR" data-capital="Ankara">Turkey</option>
+                          <option value="TM" data-capital="Ashgabat">Turkmenistan</option>
+                          <option value="TC" data-capital="Cockburn Town">Turks and Caicos Islands</option>
+                          <option value="TV" data-capital="Funafuti">Tuvalu</option>
+                          <option value="UG" data-capital="Kampala">Uganda</option>
+                          <option value="UA" data-capital="Kiev">Ukraine</option>
+                          <option value="AE" data-capital="Abu Dhabi">United Arab Emirates</option>
+                          <option value="GB" data-capital="London">United Kingdom</option>
+                          <option value="US" data-capital="Washington, D.C.">United States of America</option>
+                          <option value="UY" data-capital="Montevideo">Uruguay</option>
+                          <option value="UZ" data-capital="Tashkent">Uzbekistan</option>
+                          <option value="VU" data-capital="Port Vila">Vanuatu</option>
+                          <option value="VE" data-capital="Caracas">Venezuela</option>
+                          <option value="VN" data-capital="Hanoi">Vietnam</option>
+                          <option value="VG" data-capital="Road Town">Virgin Islands (British)</option>
+                          <option value="VI" data-capital="Charlotte Amalie">Virgin Islands (U.S.)</option>
+                          <option value="EH" data-capital="Laayoune">Western Sahara</option>
+                          <option value="YE" data-capital="Sana'a">Yemen</option>
+                          <option value="ZM" data-capital="Lusaka">Zambia</option>
+                          <option value="ZW" data-capital="Harare">Zimbabwe</option>
+                      </select>
+                      </div>
+                       
+                       <div class="dropdown plus-dropdown ms-3">
+                 <button class="" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                     <i class="fa-solid fa-circle-plus"></i>
+                 </button>
+                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                     <li><a class="dropdown-item" href="#">Client</a></li>
+                     <li><a class="dropdown-item" href="#">Project</a></li>
+                     <li><a class="dropdown-item" href="#">Task</a></li>
+                     <li><a class="dropdown-item" href="#">Lead</a></li>
+                      <li><a class="dropdown-item" href="#">Invoice</a></li>
+                       <li><a class="dropdown-item" href="#">Estimate</a></li>
+                       <li><a class="dropdown-item" href="#">Proposal</a></li>
+                       <li><a class="dropdown-item" href="#">Contract</a></li>
+                       <li><a class="dropdown-item" href="#">Subscreption</a></li>
+                       <li><a class="dropdown-item" href="#">Expense</a></li>
+                       <li><a class="dropdown-item" href="#">Ticket</a></li>
+                 </ul>
+             </div>
+                       
+                        <div>
+                           <div class="dropdown notifiaction-area">
+                               <button class="notifiaction-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                 <i class="fa-regular fa-clock"></i>
+                                 
+                               </button>
+                               <div class="dropdown-menu dropdown-menu-end p-0" aria-labelledby="dropdownMenuButton1">
+                                   <div class="card">
+                                      
+                                       <div class="card-body p-0">
+                                           <ul>
+                                               <li>
+                                                   <a href="#">
+                                                       <div class="d-flex justify-content-between align-items-center">
+                                                           <div class="">
+                                                               <h5>Started at 2023-12-19 07:15</h5>
+                                                               <p class="text-success mb-2">Total logged time: 03:41</p>
+
+                                                       
+                                                          
+                                                           </div>
+                                                           <div class="text-center">
+                                                               <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-1 rounded dark:bg-gray-700 dark:text-red-400 "><i class="fa-regular fa-clock"></i> Stop</span>
+                                                               
+                                                              <button type="button"> <i class="fa-solid fa-trash-can"></i></button>
+
+                                                           </div>
+                                                           
+                                                          
+                                                       </div>
+                                                   </a>
+                                               </li>
+                                               
+                                           </ul>
+                                       </div>
+                                       <div class="card-footer">
+                                           <a href="#">View all timesheets</a>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                      
+                      
+                       <div>
+                             <div class="dropdown notifiaction-area">
+                               <a class="notifiaction-btn" href="#">
+                                   <i class="fa-regular fa-comments"></i>
+                               </a>
+                            
+                           </div>
+                       </div>
+                       <div>
+                           <div class="dropdown notifiaction-area">
+                               <button class="notifiaction-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="fa-regular fa-bell"></i>
+                                   <div class="ring-container">
+                                       <div class="ringring"></div>
+                                       <div class="circle-notification"></div>
+                                   </div>
+                               </button>
+                               <div class="dropdown-menu dropdown-menu-end p-0" aria-labelledby="dropdownMenuButton1">
+                                   <div class="card">
+                                       <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                                         <div>
+                                             <h4>Notifications</h4>
+                                             <small>You have 4 unread</small>
+                                         </div>
+                                         <div>
+                                            <button type="button"> Mark All Read</button>
+                                         </div>
+                                       </div>
+                                       <div class="card-body p-0">
+                                           <ul>
+                                               <li>
+                                                   <a href="#">
+                                                       <div class="d-flex justify-content-between align-items-center">
+                                                           <div class="">
+                                                               <h5>New files available</h5>
+                                                               <p><i class="fa-regular fa-clock"></i> 10 hour ago</p>
+                                                           </div>
+                                                           <div class="">
+                                                               <i class="fa-solid fa-angle-right"></i>
+                                                           </div>
+                                                       </div>
+                                                   </a>
+                                               </li>
+                                                <li>
+                                                   <a href="#">
+                                                       <div class="d-flex justify-content-between align-items-center">
+                                                           <div class="">
+                                                               <h5>New Order Received</h5>
+                                                               <p><i class="fa-regular fa-clock"></i> 10 hour ago</p>
+                                                           </div>
+                                                           <div class="">
+                                                               <i class="fa-solid fa-angle-right"></i>
+                                                           </div>
+                                                       </div>
+                                                   </a>
+                                               </li>
+                                                <li>
+                                                   <a href="#">
+                                                       <div class="d-flex justify-content-between align-items-center">
+                                                           <div class="">
+                                                               <h5>New files available</h5>
+                                                               <p><i class="fa-regular fa-clock"></i> 10 hour ago</p>
+                                                           </div>
+                                                           <div class="">
+                                                               <i class="fa-solid fa-angle-right"></i>
+                                                           </div>
+                                                       </div>
+                                                   </a>
+                                               </li>
+                                                <li>
+                                                   <a href="#">
+                                                       <div class="d-flex justify-content-between align-items-center">
+                                                           <div class="">
+                                                               <h5>Updates Available</h5>
+                                                               <p><i class="fa-regular fa-clock"></i> 10 hour ago</p>
+                                                           </div>
+                                                           <div class="">
+                                                               <i class="fa-solid fa-angle-right"></i>
+                                                           </div>
+                                                       </div>
+                                                   </a>
+                                               </li>
+                                                <li>
+                                                   <a href="#">
+                                                       <div class="d-flex justify-content-between align-items-center">
+                                                           <div class="">
+                                                               <h5>22 verified registrations</h5>
+                                                               <p><i class="fa-regular fa-clock"></i> 10 hour ago</p>
+                                                           </div>
+                                                           <div class="">
+                                                               <i class="fa-solid fa-angle-right"></i>
+                                                           </div>
+                                                       </div>
+                                                   </a>
+                                               </li>
+                                                 <li>
+                                                   <a href="#">
+                                                       <div class="d-flex justify-content-between align-items-center">
+                                                           <div class="">
+                                                               <h5>New files available</h5>
+                                                               <p><i class="fa-regular fa-clock"></i> 10 hour ago</p>
+                                                           </div>
+                                                           <div class="">
+                                                               <i class="fa-solid fa-angle-right"></i>
+                                                           </div>
+                                                       </div>
+                                                   </a>
+                                               </li>
+                                                <li>
+                                                   <a href="#">
+                                                       <div class="d-flex justify-content-between align-items-center">
+                                                           <div class="">
+                                                               <h5>New files available</h5>
+                                                               <p><i class="fa-regular fa-clock"></i> 10 hour ago</p>
+                                                           </div>
+                                                           <div class="">
+                                                               <i class="fa-solid fa-angle-right"></i>
+                                                           </div>
+                                                       </div>
+                                                   </a>
+                                               </li>
+                                           </ul>
+                                       </div>
+                                       <div class="card-footer">
+                                           <a href="#">View All</a>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                      
+                      
+                    <div class="dropdown profile-dropdown">
+                        <button class="p-0 d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="me-2">
+                                <img class="inline-block h-10 w-10 rounded-full" src="img/user-icon.jpg" alt="">
+                            </div>
+                            <div>
+                                <h4 class="mb-0 text-left text-xs">Good Morning,<span class="font-semibold d-block  text-secondary">User Name</span></h4>
+                            </div>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end p-0" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item p-1" href="#"><i class="fa-regular fa-user"></i> My Profile</a></li>
+                            <li><a class="dropdown-item p-1" href="#"><i class="fa-regular fa-clock"></i> My Timesheets</a></li>
+                            <li><a class="dropdown-item p-1" href="#"><i class="fa-regular fa-pen-to-square"></i> Edit Profile</a></li>
+                            <li><a class="dropdown-item p-1" href="#"><i class="fa-solid fa-power-off"></i> Logout</a></li>
+                        </ul>
+                    </div>
+             </div>
+         </div>
+    </nav>
+</header>
+
+<aside>
+<div class="d-flex flex-column flex-shrink-0  bg-white vh-100 sidebar-nav overflow-hidden" style="width: 240px;">
+   
+      <div class="navbar-brand text-center p-2 mb-0 me-0">
+          <a href="/">
+              <img src="img/zyme-crm.svg" class="img-responsive" alt="Image">
+          </a>
+          
+      </div>
+   
+  
+    <ul class="flex-column mb-auto p-3 pb-0 side-menu-area mb-0">
+        <li class="nav-item d-inline">
+            <a href="#" class="nav-link active" aria-current="page">
+             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><path d="M304 240V16.6c0-9 7-16.6 16-16.6C443.7 0 544 100.3 544 224c0 9-7.6 16-16.6 16H304zM32 272C32 150.7 122.1 50.3 239 34.3c9.2-1.3 17 6.1 17 15.4V288L412.5 444.5c6.7 6.7 6.2 17.7-1.5 23.1C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zm526.4 16c9.3 0 16.6 7.8 15.4 17c-7.7 55.9-34.6 105.6-73.9 142.3c-6 5.6-15.4 5.2-21.2-.7L320 288H558.4z"/></svg>
+                Dashboard
+            </a>
+        </li>
+        <li class="d-inline">
+            <a href="#" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><path d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z"/></svg>
+                Leads
+            </a>
+        </li>
+        <li class="d-inline">
+            <a href="#" class="nav-link">
+             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>
+                Reminder
+            </a>
+        </li>
+        
+        <li class="d-inline">
+            <a href="#" class="nav-link">
+               <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                Customers
+            </a>
+        </li>
+         <li class="d-inline">
+
+            
+            <div class="dropdown">
+                <button class="btn dropdown-toggle w-100 text-start shadow-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+                    Finance
+                </button>
+                <ul class="dropdown-menu position-relative border-0">
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Proposal</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Estimation</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Invoices</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Payment</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Credit Note</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Estimate Request</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Contract</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Subscription</a></li>
+                </ul>
+            </div>
+            
+<!--            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>-->
+          
+        </li>
+         <li class="d-inline">
+            <a href="#" class="nav-link">
+               <svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><path d="M312 24V34.5c6.4 1.2 12.6 2.7 18.2 4.2c12.8 3.4 20.4 16.6 17 29.4s-16.6 20.4-29.4 17c-10.9-2.9-21.1-4.9-30.2-5c-7.3-.1-14.7 1.7-19.4 4.4c-2.1 1.3-3.1 2.4-3.5 3c-.3 .5-.7 1.2-.7 2.8c0 .3 0 .5 0 .6c.2 .2 .9 1.2 3.3 2.6c5.8 3.5 14.4 6.2 27.4 10.1l.9 .3c11.1 3.3 25.9 7.8 37.9 15.3c13.7 8.6 26.1 22.9 26.4 44.9c.3 22.5-11.4 38.9-26.7 48.5c-6.7 4.1-13.9 7-21.3 8.8V232c0 13.3-10.7 24-24 24s-24-10.7-24-24V220.6c-9.5-2.3-18.2-5.3-25.6-7.8c-2.1-.7-4.1-1.4-6-2c-12.6-4.2-19.4-17.8-15.2-30.4s17.8-19.4 30.4-15.2c2.6 .9 5 1.7 7.3 2.5c13.6 4.6 23.4 7.9 33.9 8.3c8 .3 15.1-1.6 19.2-4.1c1.9-1.2 2.8-2.2 3.2-2.9c.4-.6 .9-1.8 .8-4.1l0-.2c0-1 0-2.1-4-4.6c-5.7-3.6-14.3-6.4-27.1-10.3l-1.9-.6c-10.8-3.2-25-7.5-36.4-14.4c-13.5-8.1-26.5-22-26.6-44.1c-.1-22.9 12.9-38.6 27.7-47.4c6.4-3.8 13.3-6.4 20.2-8.2V24c0-13.3 10.7-24 24-24s24 10.7 24 24zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5H192 32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32H68.8l44.9-36c22.7-18.2 50.9-28 80-28H272h16 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H288 272c-8.8 0-16 7.2-16 16s7.2 16 16 16H392.6l119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384l0 0-.9 0c.3 0 .6 0 .9 0z"/></svg>
+                Expenses
+            </a>
+        </li>
+         <li class="d-inline">
+            <a href="#" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><path d="M14 2.2C22.5-1.7 32.5-.3 39.6 5.8L80 40.4 120.4 5.8c9-7.7 22.3-7.7 31.2 0L192 40.4 232.4 5.8c9-7.7 22.3-7.7 31.2 0L304 40.4 344.4 5.8c7.1-6.1 17.1-7.5 25.6-3.6s14 12.4 14 21.8V488c0 9.4-5.5 17.9-14 21.8s-18.5 2.5-25.6-3.6L304 471.6l-40.4 34.6c-9 7.7-22.3 7.7-31.2 0L192 471.6l-40.4 34.6c-9 7.7-22.3 7.7-31.2 0L80 471.6 39.6 506.2c-7.1 6.1-17.1 7.5-25.6 3.6S0 497.4 0 488V24C0 14.6 5.5 6.1 14 2.2zM96 144c-8.8 0-16 7.2-16 16s7.2 16 16 16H288c8.8 0 16-7.2 16-16s-7.2-16-16-16H96zM80 352c0 8.8 7.2 16 16 16H288c8.8 0 16-7.2 16-16s-7.2-16-16-16H96c-8.8 0-16 7.2-16 16zM96 240c-8.8 0-16 7.2-16 16s7.2 16 16 16H288c8.8 0 16-7.2 16-16s-7.2-16-16-16H96z"/></svg>
+                Accouting 
+            </a>
+        </li>
+         <li class="d-inline">
+            <a href="#" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512"><path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z"/></svg>
+                Products 
+            </a>
+        </li>
+        
+        
+        <li class="d-inline">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle w-100 text-start shadow-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512">
+                        <path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z" />
+                    </svg>
+                    HRM
+                </button>
+                <ul class="dropdown-menu position-relative border-0">
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Add Staff</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Leaves</a></li>
+                </ul>
+            </div>
+        </li>
+        
+        <li class="d-inline">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle w-100 text-start shadow-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z"/></svg>
+                     Work Load
+                </button>
+                <ul class="dropdown-menu position-relative border-0">
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Project</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Task</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Log Hours</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle"></i> Road Map</a></li>
+                </ul>
+            </div>
+        </li>
+         <li class="d-inline">
+            <a href="#" class="nav-link">
+             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512"><path d="M32 0C14.3 0 0 14.3 0 32S14.3 64 32 64H48c8.8 0 16 7.2 16 16V368c0 44.2 35.8 80 80 80h18.7c-1.8 5-2.7 10.4-2.7 16c0 26.5 21.5 48 48 48s48-21.5 48-48c0-5.6-1-11-2.7-16H450.7c-1.8 5-2.7 10.4-2.7 16c0 26.5 21.5 48 48 48s48-21.5 48-48c0-5.6-1-11-2.7-16H608c17.7 0 32-14.3 32-32s-14.3-32-32-32H144c-8.8 0-16-7.2-16-16V80C128 35.8 92.2 0 48 0H32zM192 80V272c0 26.5 21.5 48 48 48H560c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48H464V176c0 5.9-3.2 11.3-8.5 14.1s-11.5 2.5-16.4-.8L400 163.2l-39.1 26.1c-4.9 3.3-11.2 3.6-16.4 .8s-8.5-8.2-8.5-14.1V32H240c-26.5 0-48 21.5-48 48z"/></svg>
+               Orders
+            </a>
+        </li>
+          <li class="d-inline">
+            <a href="#" class="nav-link">
+               <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M256 48C141.1 48 48 141.1 48 256v40c0 13.3-10.7 24-24 24s-24-10.7-24-24V256C0 114.6 114.6 0 256 0S512 114.6 512 256V400.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24H240c-26.5 0-48-21.5-48-48s21.5-48 48-48h32c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40V256c0-114.9-93.1-208-208-208zM144 208h16c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H144c-35.3 0-64-28.7-64-64V272c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64v48c0 35.3-28.7 64-64 64H352c-17.7 0-32-14.3-32-32V240c0-17.7 14.3-32 32-32h16z"/></svg>
+               Support Ticket
+            </a>
+        </li>
+         <li class="d-inline">
+            <a href="#" class="nav-link">
+               <svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><path d="M192 0c-41.8 0-77.4 26.7-90.5 64H64C28.7 64 0 92.7 0 128V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H282.5C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM112 192H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+               Notice Board
+            </a>
+        </li>
+         <li class="d-inline">
+            <a href="#" class="nav-link">
+               <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"/></svg>
+               Knowledge Base
+            </a>
+        </li>
+         <li class="d-inline">
+            <a href="#" class="nav-link">
+               <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/></svg>
+              Report
+            </a>
+        </li>
+   </ul>
+    <hr class="m-0">
+    <div class="last-setting-option">
+         <ul class="m-0 p-0">
+        <li class="d-inline">
+            <a href="#" class="nav-link  p-2 ms-4">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+                    <path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z" />
+                </svg>
+                Settings
+            </a>
+        </li>
+    </ul>
+    </div>
+
+</div>
+ </aside>
+ 
+ <div class="main-content-area">
+      <table id="" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>$320,800</td>
+            </tr>
+            <tr>
+                <td>Cedric Kelly</td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>$433,060</td>
+            </tr>
+            <tr>
+                <td>Sonya Frost</td>
+                <td>Software Engineer</td>
+                <td>Edinburgh</td>
+                <td>23</td>
+                <td>$103,600</td>
+            </tr>
+            <tr>
+                <td>Quinn Flynn</td>
+                <td>Support Lead</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>$342,000</td>
+            </tr>
+            <tr>
+                <td>Dai Rios</td>
+                <td>Personnel Lead</td>
+                <td>Edinburgh</td>
+                <td>35</td>
+                <td>$217,500</td>
+            </tr>
+            <tr>
+                <td>Gavin Joyce</td>
+                <td>Developer</td>
+                <td>Edinburgh</td>
+                <td>42</td>
+                <td>$92,575</td>
+            </tr>
+            <tr>
+                <td>Martena Mccray</td>
+                <td>Post-Sales support</td>
+                <td>Edinburgh</td>
+                <td>46</td>
+                <td>$324,050</td>
+            </tr>
+            <tr>
+                <td>Jennifer Acosta</td>
+                <td>Junior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>43</td>
+                <td>$75,650</td>
+            </tr>
+            <tr>
+                <td>Shad Decker</td>
+                <td>Regional Director</td>
+                <td>Edinburgh</td>
+                <td>51</td>
+                <td>$183,000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+    <table id="" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Jena Gaines</td>
+                <td>Office Manager</td>
+                <td>London</td>
+                <td>30</td>
+                <td>$90,560</td>
+            </tr>
+            <tr>
+                <td>Haley Kennedy</td>
+                <td>Senior Marketing Designer</td>
+                <td>London</td>
+                <td>43</td>
+                <td>$313,500</td>
+            </tr>
+            <tr>
+                <td>Tatyana Fitzpatrick</td>
+                <td>Regional Director</td>
+                <td>London</td>
+                <td>19</td>
+                <td>$385,750</td>
+            </tr>
+            <tr>
+                <td>Michael Silva</td>
+                <td>Marketing Designer</td>
+                <td>London</td>
+                <td>66</td>
+                <td>$198,500</td>
+            </tr>
+            <tr>
+                <td>Bradley Greer</td>
+                <td>Software Engineer</td>
+                <td>London</td>
+                <td>41</td>
+                <td>$132,000</td>
+            </tr>
+            <tr>
+                <td>Angelica Ramos</td>
+                <td>Chief Executive Officer (CEO)</td>
+                <td>London</td>
+                <td>47</td>
+                <td>$1,200,000</td>
+            </tr>
+            <tr>
+                <td>Suki Burks</td>
+                <td>Developer</td>
+                <td>London</td>
+                <td>53</td>
+                <td>$114,500</td>
+            </tr>
+            <tr>
+                <td>Prescott Bartlett</td>
+                <td>Technical Author</td>
+                <td>London</td>
+                <td>27</td>
+                <td>$145,000</td>
+            </tr>
+            <tr>
+                <td>Timothy Mooney</td>
+                <td>Office Manager</td>
+                <td>London</td>
+                <td>37</td>
+                <td>$136,200</td>
+            </tr>
+            <tr>
+                <td>Bruno Nash</td>
+                <td>Software Engineer</td>
+                <td>London</td>
+                <td>38</td>
+                <td>$163,500</td>
+            </tr>
+            <tr>
+                <td>Hermione Butler</td>
+                <td>Regional Director</td>
+                <td>London</td>
+                <td>47</td>
+                <td>$356,250</td>
+            </tr>
+            <tr>
+                <td>Lael Greer</td>
+                <td>Systems Administrator</td>
+                <td>London</td>
+                <td>21</td>
+                <td>$103,500</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+ </div>
+ 
+ 
+ 
+  
+<!---SCRIPT---->
+<script src="js/vendor/modernizr-3.8.0.min.js"></script>
+<script src="js/vendor/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/vendor/popper.min.js"></script> 
+<script src="js/bootstrap.bundle.min.js"></script>   
+
+<script src="js/main.js"></script>
+     
+<script>
+$('table.display').DataTable();    
+</script>     
+     
+</body>
+</html>
